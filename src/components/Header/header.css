@@ -1,0 +1,110 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #f0f0f0;
+}
+
+.logo {
+  height: 50px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none; /* Remove underline */
+}
+
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.burger.open .burgerLine {
+  background-color: #000000;
+}
+
+.burger.open .burgerLine:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.burger.open .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open .burgerLine:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.burgerLine {
+  height: 3px;
+  width: 30px;
+  background-color: #2a2727;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background: #ffffff;
+  box-shadow: -10px 0px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+  z-index: 1000;
+  border-radius: 10px 0 0 10px;
+}
+
+.menu-item {
+  color: #020202;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: rgba(117, 114, 114, 0.136);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.greeting-text {
+  margin-left: 10px;
+  color: #020202; /* Match the existing color */
+  font-size: 1rem; /* Match the existing font size */
+  opacity: 0;
+  transform: translateX(-20px); /* Start off-screen to the right */
+  transition: opacity 3s ease, transform 3s ease;
+  white-space: nowrap;
+}
+
+.greeting-text-show {
+  opacity: 1;
+  transform: translateX(0); /* Slide in to position */
+}

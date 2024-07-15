@@ -1,0 +1,135 @@
+.app-container {
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.open-modal-btn {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  background-color: #c33bcf;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.open-modal-btn:hover {
+  background-color: #7e0884;
+}
+
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px; /* Fixed width for square buttons */
+  height: 150px; /* Fixed height for square buttons */
+  padding: 20px;
+  border: 2px solid silver;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.category-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.category-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.category-title {
+  font-size: 16px;
+  color: #333;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.input-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.input-container h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  border: 2px solid silver;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #c33bcf;
+}
+
+.add-category-btn {
+  padding: 10px 20px;
+  margin: 10px 0;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  background-color: #c33bcf;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-category-btn:hover {
+  background-color: #7e0884;
+}

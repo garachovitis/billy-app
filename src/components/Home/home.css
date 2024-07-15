@@ -1,0 +1,192 @@
+.home-container {
+  padding: 20px;
+  background: #fff;
+}
+
+.category-section {
+  margin-bottom: 20px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 10px 0;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.001);
+}
+
+.month-contents-wrapper {
+  background-color: #f0f0f06f; /* Light gray background for the month contents */
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.accounts-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 10px;
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.down {
+  transform: rotate(45deg);
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+.account-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 10px 0 ;
+  border: none;
+  background-color: #f8f9fa;
+  color: #8b8b8b;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.account-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.account-header-box {
+  position: absolute;
+  top: 1.5px;
+  left: 10px;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.account-options {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.options-dot {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  z-index: 1;
+}
+
+.dropdown-menu div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu div:hover {
+  background-color: #f1f1f1;
+}
+
+.account-logo {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 32px; /* Προσθήκη περισσότερο margin-top */
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.account-amount {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.account-due-date {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.account-name {
+  color: #161616;
+  font-weight: bold; /* Προσθήκη bold στο όνομα της εταιρείας */
+}
+
+.account-details {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.details-separator {
+  margin: 0 10px;
+}
+
+.account-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1;
+}
+
+.btn-pay {
+  background-color: #c33bcf !important;
+  color: #fff !important;
+  border-radius: 25px !important;
+}
+
+.btn-pay:hover {
+  background-color: #7e0884 !important;
+}
+
+.btn-schedule {
+  background-color: #6c757d !important;
+  color: #fff !important;
+  border-radius: 25px !important;
+}
+
+.btn-schedule:hover {
+  background-color: #5a6268 !important;
+}

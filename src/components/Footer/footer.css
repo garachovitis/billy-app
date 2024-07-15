@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px;
+  background-color: #f0f0f0; /* Light background for the footer */
+  border-top: 1px solid #ccc;
+  border-radius: 18px; /* Rounded corners on both sides */
+  position: fixed;
+  bottom: 0.98px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer a {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #ccc; /* Thin gray line between buttons */
+  height: 100%;
+}
+.footer a:last-child {
+  border-right: none; /* Remove border for the last item */
+}
+
+.footer img {
+  width: 25px; /* Adjust based on your icon size */
+  height: auto;
+}

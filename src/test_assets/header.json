@@ -1,0 +1,22 @@
+{
+    "contact": {
+        "EN": "Contact",
+        "GR": "Επικοινωνία"
+    },
+    "login": {
+        "EN": "Login",
+        "GR": "Σύνδεση"
+    },
+    "profile": {
+        "EN": "Profile",
+        "GR": "Προφίλ χρήστη"
+    },
+    "signup": {
+        "EN": "Sign up",
+        "GR": "Εγγραφή"
+    },
+    "logout": {
+        "EN": "Logout",
+        "GR": "Αποσύνδεση"
+    }
+}
