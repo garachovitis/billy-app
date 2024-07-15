@@ -10,7 +10,6 @@
     "@babel/plugin-transform-private-methods": "^7.24.7",
     "@eslint/config-array": "^0.17.0",
     "@eslint/object-schema": "^2.1.4",
-    "@rollup/plugin-terser": "^0.4.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -35,9 +34,9 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
   },
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
-    "test": "NODE_OPTIONS=--openssl-legacy-provider react-scripts test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
