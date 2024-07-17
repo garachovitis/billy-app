@@ -15,13 +15,13 @@ const billLogos = {
 function Home() {
   const billsByCategory = [
     {
-      month: 11, // Δεκέμβριος (December)
+      month: 11, 
       accounts: [
         {
           id: 2,
           logo: billLogos['DEI'],
           name: "ΔΕΗ",
-          amount: "50,20€",
+          amount: "50.20",
           details: "Γραφείο ΠΑΤΡΑ",
           dueDate: "2024-12-15"
         },
@@ -29,20 +29,20 @@ function Home() {
           id: 1,
           logo: billLogos['Cosmote'],
           name: "Cosmote",
-          amount: "35€",
+          amount: "35.00",
           details: "Οικία 26108495",
           dueDate: "2024-12-20"
         }
       ],
     },
     {
-      month: 0, // Ιανουάριος (January)
+      month: 0, 
       accounts: [
         {
           id: 7,
           logo: billLogos['Anytime'],
           name: "Anytime",
-          amount: "200€",
+          amount: "200.00",
           details: "Ferrari",
           dueDate: "2024-01-10"
         },
@@ -50,7 +50,7 @@ function Home() {
           id: 6,
           logo: billLogos['ΕΥΔΑΠ'],
           name: "ΕΥΔΑΠ",
-          amount: "16.50€",
+          amount: "16.50",
           details: "Εξωχικό ΒΟΥΛΑ",
           dueDate: "2024-01-05"
         },
@@ -58,7 +58,7 @@ function Home() {
           id: 4,
           logo: billLogos['Cosmote'],
           name: "Cosmote",
-          amount: "38,60€",
+          amount: "38.60",
           details: "Student 26108495",
           dueDate: "2024-01-15"
         },
@@ -66,7 +66,7 @@ function Home() {
           id: 5,
           logo: billLogos['DEI'],
           name: "DEI",
-          amount: "64,10€",
+          amount: "64.10",
           details: "Ξενοδοχείο Πάτρα",
           dueDate: "2024-01-20"
         },
@@ -115,8 +115,27 @@ function Home() {
 
   const sortedBillsByCategory = billsByCategory.sort((a, b) => b.month - a.month);
 
+  const totalMonthlyExpenses = sortedBillsByCategory.reduce((total, { accounts }) => {
+    return total + accounts.reduce((sum, { amount }) => sum + parseFloat(amount.replace(/[^0-9.-]+/g, "")), 0);
+  }, 0).toFixed(2);
+
   return (
     <div className="home-container">
+      <div className="progress-summary-wrapper">
+        <div className="progress-summary">
+          <div className="summary-header">
+            <h2>Μηνιαία έξοδα: {totalMonthlyExpenses}€</h2>
+          </div>
+          <div className="progress-bar-wrapper">
+            <div className="progress-label">Πληρωμένοι</div>
+            <div className="progress-bar">
+              <div className="progress-bar-filled"></div>
+              <span className="progress-bar-label">3/4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {sortedBillsByCategory.map(({ month, accounts }) => {
         const monthName = getMonthName(month === 0 ? currentMonth : previousMonth);
         const isCategoryOpen = expandedCategories[monthName];
@@ -146,7 +165,7 @@ function Home() {
                       </div>
                       <img src={account.logo} alt={`${account.name} logo`} className="account-logo" />
                       <div className="account-info">
-                        <div className="account-amount">{account.amount}</div>
+                        <div className="account-amount">{account.amount}€</div>
                         <div className="account-due-date">Λήξη: {formatDate(account.dueDate)}</div>
                       </div>
                       <div className="account-buttons">

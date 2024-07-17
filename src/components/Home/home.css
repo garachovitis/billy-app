@@ -3,6 +3,60 @@
   background: #fff;
 }
 
+.progress-summary-wrapper {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius:  10px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.progress-summary {
+  text-align: center;
+}
+
+.summary-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+.progress-bar-wrapper {
+  margin: 10px 0;
+}
+
+.progress-label {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #606060;
+}
+
+.progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  height: 15px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #ccc; /* Add border */
+  position: relative; /* Required for positioning the label */
+}
+
+.progress-bar-filled {
+  background-color: #c33bcf;
+  height: 100%;
+  width: 75%; /* Adjust width to 75% */
+  transition: width 0.3s ease;
+}
+
+.progress-bar-label {
+  position: absolute;
+  right: 10px; /* Position it at the end */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: #333;
+}
+
 .category-section {
   margin-bottom: 20px;
 }
@@ -22,7 +76,7 @@
 }
 
 .month-contents-wrapper {
-  background-color: #f0f0f06f; /* Light gray background for the month contents */
+  background-color: #f0f0f06f;
   padding: 10px;
   border-radius: 10px;
 }
@@ -55,7 +109,7 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  margin: 10px 0 ;
+  margin: 10px 0;
   border: none;
   background-color: #f8f9fa;
   color: #8b8b8b;
@@ -117,7 +171,7 @@
   width: 50px;
   height: auto;
   margin-bottom: 10px;
-  margin-top: 32px; /* Προσθήκη περισσότερο margin-top */
+  margin-top: 32px;
 }
 
 .account-info {
@@ -141,7 +195,7 @@
 
 .account-name {
   color: #161616;
-  font-weight: bold; /* Προσθήκη bold στο όνομα της εταιρείας */
+  font-weight: bold;
 }
 
 .account-details {
