@@ -35,7 +35,7 @@ function Header() {
       <NavLink to="/" className="logo-link">
         <img src={billLogo} alt="Logo" className="logo" />
         <div className={`greeting-text ${isTextVisible ? 'greeting-text-show' : ''}`}>
-          Γεία σου Giorgos
+          Γεία σου User
         </div>
       </NavLink>
       <div className={`burger ${isMenuOpen ? 'open' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -47,6 +47,7 @@ function Header() {
       {isMenuOpen && (
         <div className="menu">
           <NavLink to="/profile" className="menu-item">Προφίλ</NavLink>
+          <NavLink to="/NewAccount" className="menu-item">Νέος Λογαριασμός</NavLink>
           <NavLink to="/saved" className="menu-item">Αποθηκευμένα</NavLink>
           <NavLink to="/about-us" className="menu-item">Σχετικά με εμάς</NavLink>
         </div>

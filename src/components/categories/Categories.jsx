@@ -7,11 +7,11 @@ Modal.setAppElement('#root'); // This line is necessary for accessibility reason
 const Categories = () => {
   const [cat, setCat] = useState([
     { id: 1, icon: '🏢', title: 'Billy Office' },
-    { id: 2, icon: '🏠', title: 'Patra' },
-    { id: 3, icon: '🏡', title: 'Sparti' },
+    { id: 2, icon: '🏠', title: 'Student House' },
+    { id: 3, icon: '🏡', title: 'Home' },
     { id: 4, icon: '📱', title: 'Mobiles' },
-    { id: 5, icon: '🩴', title: 'Naxos Hotel' },
-    { id: 6, icon: '🚘', title: 'Ferrari' },
+    { id: 5, icon: '🏨', title: 'Naxos Hotel' },
+    { id: 6, icon: '🏎️', title: 'Cars' },
   ]);
 
   const [newCategoryTitle, setNewCategoryTitle] = useState('');

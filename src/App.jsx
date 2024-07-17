@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Categories from './components/categories/Categories';
 import Schedule from './components/schedule/Schedule';
 import Settings from './components/settings/Settings';
+import NewAccount from './components/new_ac/NewAccount'; // Εισάγετε το NewAccount component
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/NewAccount" element={<NewAccount />} /> {/* Προσθέστε τη νέα διαδρομή */}
           {/* Προσθέστε εδώ οποιεσδήποτε άλλες διαδρομές χρειάζεστε */}
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>

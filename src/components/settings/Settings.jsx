@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './settings.css'; // Βεβαιωθείτε ότι το αρχείο CSS υπάρχει και έχει τις κατάλληλες στυλιστικές οδηγίες
 import userImage from '../../icons/user.png';
 import folderIcon from '../../icons/folder.png';
@@ -7,14 +8,16 @@ import plusIcon from '../../icons/plus.png';
 const Settings = () => {
     const [isAddAccountModalOpen, setAddAccountModalOpen] = useState(false);
     const [accountName, setAccountName] = useState("");
+    const navigate = useNavigate();
 
     const navigateAddAccount = () => {
-        setAddAccountModalOpen(true);
+        navigate('/NewAccount');
     };
 
     const closeModal = () => {
         setAddAccountModalOpen(false);
     };
+
     const handleAddAccount = () => {
         console.log("Adding account:", accountName); // Implement your addition logic here
         closeModal();
@@ -56,7 +59,7 @@ const Settings = () => {
             {isAddAccountModalOpen && (
                 <div className="modal">
                     <div className="modalContent">
-                    <input type="text" placeholder="Εισάγετε Rf Λογαριασμού" className="inputBox" value={accountName} onChange={handleInputChange} />
+                        <input type="text" placeholder="Εισάγετε Rf Λογαριασμού" className="inputBox" value={accountName} onChange={handleInputChange} />
                         <button onClick={handleAddAccount} className="roundedButton">Προσθήκη</button>
                     </div>
                     <div className="modalOverlay" onClick={closeModal}></div>
