@@ -6,8 +6,9 @@
 .progress-summary-wrapper {
   background-color: #f8f9fa;
   padding: 10px;
-  border-radius:  10px 40px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius:  10px 10px 40px 40px;
+  box-shadow: 0 2px 5px rgba(63, 136, 134, 0.2);
+  
   margin-bottom: 20px;
 }
 
@@ -42,10 +43,10 @@
 }
 
 .progress-bar-filled {
-  background-color: #c33bcf;
+  background-color: #37B7C3;
   height: 100%;
   width: 75%; /* Adjust width to 75% */
-  transition: width 0.3s ease;
+  transition: width 2s ease;
 }
 
 .progress-bar-label {
@@ -226,21 +227,21 @@
 }
 
 .btn-pay {
-  background-color: #c33bcf !important;
+  background-color: #37B7C3 !important;
   color: #fff !important;
   border-radius: 25px !important;
 }
 
 .btn-pay:hover {
-  background-color: #7e0884 !important;
+  background-color: #3b8193 !important;
 }
 
 .btn-schedule {
-  background-color: #6c757d !important;
+  background-color: #071952 !important;
   color: #fff !important;
   border-radius: 25px !important;
 }
 
 .btn-schedule:hover {
-  background-color: #5a6268 !important;
+  background-color: #3b8193 !important;
 }

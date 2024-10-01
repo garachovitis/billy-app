@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './home.css';
 import cosmoteLogo from '../../icons/cosmote.png';
 import deiLogo from '../../icons/dei.png';
 import eydapLogo from '../../icons/eydap.png';
 import anytimeLogo from '../../icons/anytime2.png';
 
+// Static bill logos
 const billLogos = {
   'Cosmote': cosmoteLogo,
   'DEI': deiLogo,
@@ -13,7 +14,11 @@ const billLogos = {
 };
 
 function Home() {
-  const billsByCategory = [
+  // State to hold fetched data
+  const [fetchedBills, setFetchedBills] = useState([]);
+
+  // Static bills data
+  const staticBillsByCategory = [
     {
       month: 11, 
       accounts: [
@@ -74,6 +79,29 @@ function Home() {
     },
   ];
 
+  // Function to fetch dynamic bills data from your database (replace the URL with your actual API endpoint)
+  const fetchBillsFromDatabase = async () => {
+    try {
+      const response = await fetch('https://your-api-endpoint.com/bills');
+      const data = await response.json();
+      
+      // Map the data to include the logo
+      const formattedBills = data.map(bill => ({
+        ...bill,
+        logo: billLogos[bill.name], // Attach the corresponding logo from the static logos
+      }));
+
+      setFetchedBills(formattedBills);
+    } catch (error) {
+      console.error('Error fetching bills:', error);
+    }
+  };
+
+  useEffect(() => {
+    // Fetch bills when the component mounts
+    fetchBillsFromDatabase();
+  }, []);
+
   const getMonthName = (monthIndex) => {
     const monthNames = [
       "Ιανουάριος", "Φεβρουάριος", "Μάρτιος", "Απρίλιος", "Μάιος", "Ιούνιος",
@@ -113,9 +141,17 @@ function Home() {
     setOpenDropdown(null);
   };
 
-  const sortedBillsByCategory = billsByCategory.sort((a, b) => b.month - a.month);
+  // Merge fetched bills with the static bills
+  const allBillsByCategory = [...staticBillsByCategory];
 
-  const totalMonthlyExpenses = sortedBillsByCategory.reduce((total, { accounts }) => {
+  if (fetchedBills.length > 0) {
+    allBillsByCategory.push({
+      month: currentMonth,
+      accounts: fetchedBills, // Adding the dynamic bills
+    });
+  }
+
+  const totalMonthlyExpenses = allBillsByCategory.reduce((total, { accounts }) => {
     return total + accounts.reduce((sum, { amount }) => sum + parseFloat(amount.replace(/[^0-9.-]+/g, "")), 0);
   }, 0).toFixed(2);
 
@@ -136,7 +172,7 @@ function Home() {
         </div>
       </div>
 
-      {sortedBillsByCategory.map(({ month, accounts }) => {
+      {allBillsByCategory.map(({ month, accounts }) => {
         const monthName = getMonthName(month === 0 ? currentMonth : previousMonth);
         const isCategoryOpen = expandedCategories[monthName];
         return (

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './header.css';
-import billLogo from '../../icons/logo minimal.png'; // Update the path according to your project structure
+import billLogo from '../../icons/F_BILLY_LOGO.png'; // Update the path according to your project structure
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -9,14 +9,14 @@
   color: #fff;
   border: none;
   border-radius: 25px;
-  background-color: #c33bcf;
+  background-color: #5fb4c1;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .open-modal-btn:hover {
-  background-color: #7e0884;
+  background-color: #3b8193;
 }
 
 .categories-grid {
